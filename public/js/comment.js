@@ -1,6 +1,6 @@
-const newFormHandler = async (event) => {
+const newComment = async (event) => {
     event.preventDefault();
-    const post_id = JSON.parse(event.target.getAttribute('data-id'));
+    const post_id = event.target.getAttribute('data-id');
     const content = document.querySelector('#comment-desc').value.trim();
   
     if (content) {
@@ -20,6 +20,4 @@ const newFormHandler = async (event) => {
     }
   };
   
-  document
-    .querySelector('.new-comment-form')
-    .addEventListener('submit', newFormHandler);
+  document.querySelector('.new-comment-form').addEventListener('submit', newComment);
