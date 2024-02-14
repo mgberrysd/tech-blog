@@ -2,9 +2,11 @@
 
 ## Description
 
-This project aimed to create a website that used front and back-end code to a Note Taker app. When visiting the site the user is presented with a homepage and a "Get Started" button. Clicking the button brings the user to note taker page. On the Note taker page the user can create new notes by clicking the "New Note" button, filling out a note title and text and clicking then clicking the "Save Note" button. Saved notes are then displayed on the left side of the page. By clicking on saved notes, users can view the note title and text of that note. Users can also delete notes by clicking the delete button on any saved note.
+This project aimed to create a fullstack tech blog website with a responsive front and backend connected to an active database. 
 
-This project highlighted the use of the Express package to write server code using JS. The project used several methods to modify and set content on the page including get, post, and delete. Finally the project used reading and writing to a JSON file to save and store persistent data rather than using the method of local storage that was used preiously.
+When visiting the site the user is presented with a homepage posts from other users and navigation links to the dasboard and login. If not already logged in the user will be redirected to the login/signup page. Logging in or signing up as a new user will redirect the user to the dashboard. From the dashboard the user can make new posts and view, update or delete existing posts they created. Clicking on the title of a post from either the dashboard or the homepage will redirect the user to the individual post. One that post's page the user can view comments on that post or post a new comment if they are logged in.
+
+The project combined api Routes to modify and set content on the page including get, post, put, and delete with home Routes to serve the frontend HTML with updated data as the user interacts with it. A handlebars template was used to easily format data for each of the individual pages. Finally the project used a connected database to store user data including logins and post data which could be displayed on the site.
 
 ## Usage
 
@@ -12,13 +14,13 @@ The repo of the project can be found at https://github.com/mgberrysd/tech-blog
 
 A live version of the site can be found at https://murmuring-taiga-11356-55271fef0ba0.herokuapp.com/
 
-When on the notes page the user should see the following:
+When on the home page the user should see the following:
 
 ![Deployed version of the tech blog](assets/note_taker_ex.png)
 
 
 ## Credits
 
-The back-end JS in server.js for the Note Taker page was created by Michael Berry.
+This project used the unit 14 mini project as well as the Breaking Bread project 2 as a basis. Much of the file structure is identical to those projects, although many pages were either added, removed, or heavily modified for use in this project. The login/sign up pages and helper utils remained mostly unchanged.
 
-The project used the node Express package for the running the server and the node uuid package for assigining unique ids to the notes.
+The project used a number of node packages including Express, mysql2, Sequelize, dotenv, bcrypt, and handlebars to create the site.
