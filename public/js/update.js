@@ -1,3 +1,6 @@
+// JS for updating a post
+// Very similar to making a new post except that it is a put request for a specific id
+
 const newFormHandler = async (event) => {
     event.preventDefault();
 

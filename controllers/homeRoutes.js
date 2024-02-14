@@ -2,9 +2,10 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Route for the homepage, will display all posts and associated creators (users)
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all posts and JOIN with user data
     const postData = await Post.findAll({
       include: [
         {
@@ -27,6 +28,9 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Route for an individual post
+// Will display that post with the associated user
+// Also displays comments and thier associated users
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -52,6 +56,9 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// Update page for a single post
+// Requires withAuth to access
+// Inputs are prepopulated with post data
 router.get('/update/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
@@ -67,7 +74,10 @@ router.get('/update/:id', withAuth, async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// Dashboard page for a single user
+// Will show all of their posts
+// Uses withAuth middleware to prevent access to route if not logged in
+// Will redirect the user to login/signup if not
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -87,6 +97,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// Route for login/signup
+// Will redirect to dashboard if already logged in
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

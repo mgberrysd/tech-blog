@@ -14,10 +14,14 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+// Session storage for the site, holds the logged in session variable
+// Allows the user to access the dashboard amoung other things
+// Lasts for what should be 50 minutes before deletion
+// Was originally 5*
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 30000000,
+    maxAge: 3000000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',

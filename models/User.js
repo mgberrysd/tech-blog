@@ -8,6 +8,8 @@ class User extends Model {
   }
 }
 
+// User model with password hashing, unchanged
+
 User.init(
   {
     id: {

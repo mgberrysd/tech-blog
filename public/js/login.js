@@ -1,3 +1,6 @@
+// Login and signup handlers are unchanged from mini project 14
+// Only difference is where the user is sent on success (dashboard)
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 

@@ -1,3 +1,6 @@
+// JS for adding a comment on the individual post pages
+// Makes a post request to the comments api then reloads the page to show the newly posted comment
+
 const newComment = async (event) => {
     event.preventDefault();
     const post_id = event.target.getAttribute('data-id');

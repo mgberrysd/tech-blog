@@ -1,4 +1,7 @@
-const newFormHandler = async (event) => {
+//  JS for the dashboard giving functionality to the post submission button and delete button
+// Both buttons make the appropriate requests to the api routes then reload the dashboard
+ 
+ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();

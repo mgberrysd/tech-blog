@@ -1,9 +1,12 @@
+{{!-- Handlebars page for the dashboard --}}
+
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
+{{!-- Form for creating new posts --}}
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Post:</h3>
@@ -23,10 +26,13 @@
     </form>
   </div>
 
+{{!-- If the user has posts the following will display --}}
   {{#if posts.length}}
   <div class="col-md-6 post-list">
     <h3>My Posts:</h3>
-
+{{!-- For each post a link to that post is created as well as update and delete buttons --}}
+{{!-- Update links to a seperate page since post content is not displayed here --}}
+{{!-- Delete button simply makes a delete request then reloads the page --}}
     {{#each posts}}
     <div class="row mb-2">
       <div class="col-md-8">
