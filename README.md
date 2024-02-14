@@ -12,11 +12,11 @@ The project combined api Routes to modify and set content on the page including 
 
 The repo of the project can be found at https://github.com/mgberrysd/tech-blog
 
-A live version of the site can be found at https://murmuring-taiga-11356-55271fef0ba0.herokuapp.com/
+A live version of the site can be found at https://afternoon-refuge-24103-b0fa60b9886f.herokuapp.com/
 
 When on the home page the user should see the following:
 
-![Deployed version of the tech blog](assets/note_taker_ex.png)
+![Deployed version of the tech blog](assets/tech_blog_ex.png)
 
 
 ## Credits
